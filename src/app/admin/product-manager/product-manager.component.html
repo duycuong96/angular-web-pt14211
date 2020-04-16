@@ -1,0 +1,76 @@
+<nav aria-label="breadcrumb" class="mb-4">
+  <ol class="breadcrumb my-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin/dashboard" >Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Quản lý sản phẩm</li>
+  </ol>
+</nav>
+
+<section class="pricing">
+  <div class="card card_border mb-5">
+    <div class="cards__heading">
+      <h3>Quản lý sản phẩm</h3>
+    </div>
+    <div class="card-body">
+      <!-- pricing version 1 -->
+
+      <!--//BLOCK ROW END-->
+
+      <section class="w3l-pricing1">
+        <div class="row px-2">
+
+          <div class="col-md-12 px-2">
+            <div class="mb-4 price-card price-card2 p-lg-4 p-md-3 p-4 recomemded-price">
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Hình ảnh</th>
+                    <th scope="col">Giá</th>
+
+                    <th scope="col">
+                      <!-- <a  [routerLink]="['/admin/product', 'add']"  class="btn btn-primary">Thêm mới</a> -->
+                    </th>
+                  </tr>
+                </thead>
+
+
+                  <tbody>
+                    <tr *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                      <!-- content here -->
+
+                        <th class="row">{{ product.id }}</th>
+                        <td>{{ product.name }}</td>
+                        <td>
+                          <img class="card-img-top" src="{{ product.image }}" alt="" style="width: 200px;">
+                        </td>
+                        <td>{{ product.price }}</td>
+
+
+                    </tr>
+
+                  </tbody>
+
+
+              </table>
+              <hr>
+              <div>
+                <div class="mb-4">
+                  <!-- <a href="#" class="btn btn-lg btn-primary btn-style">Thêm mới</a> -->
+                  <ngb-pagination
+                [(page)]="page"
+                [pageSize]="pageSize"
+                [collectionSize]="products.length"></ngb-pagination>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+    </section></div>
+  </div>
+</section>
