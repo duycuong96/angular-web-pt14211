@@ -7,18 +7,20 @@ import { ProductManagerComponent } from './admin/product-manager/product-manager
 import { ShopComponent } from './client/shop/shop.component';
 import { AddProductManagerComponent } from './admin/product-manager/add-product-manager/add-product-manager.component';
 import { EditProductManagerComponent } from './admin/product-manager/edit-product-manager/edit-product-manager.component';
+import { PageNotFoundComponent } from './client/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/home',
     pathMatch: 'full'
   },
   {
     path: 'home',
     component: HomeComponent
   },
+
   {
     path: 'shop',
     component: ShopComponent
@@ -50,6 +52,10 @@ const routes: Routes = [
       }
 
     ]
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 

@@ -1,1 +1,22 @@
-<p>edit-product-manager works!</p>
+<br>
+<h2>Chỉnh sửa </h2>
+<form *ngIf="product">
+  <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" class="form-control" name="name" [(ngModel)]="product.name">
+  </div>
+  <div class="form-group">
+    <label for="">Price</label>
+    <input type="number" class="form-control" name="price" [(ngModel)]="product.price">
+  </div>
+  <div class="form-group">
+    <label for="">Url hình ảnh</label>
+    <input type="text" class="form-control" name="image" [(ngModel)]="product.image">
+  </div>
+  <div class="form-group">
+    <label for="">Mô tả</label>
+    <input type="text" class="form-control" name="desc" [(ngModel)]="product.desc">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="updateProduct()">Save</button>
+</form>
+<hr>
