@@ -25,9 +25,10 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
+                    <th scope="col">Tên</th>
                     <th scope="col">Hình ảnh</th>
                     <th scope="col">Giá</th>
+                    <th>Danh mục</th>
 
                     <th scope="col">
                       <a  [routerLink]="['/admin/product', 'add']"  class="btn btn-primary">Thêm mới</a>
@@ -43,9 +44,10 @@
                         <th class="row">{{ product.id }}</th>
                         <td>{{ product.name }}</td>
                         <td>
-                          <img class="card-img-top" src="{{ product.image }}" alt="" style="width: 200px;">
+                          <img class="card-img-top" src="{{ product.image }}" alt="" style="width: 50px;">
                         </td>
                         <td>{{ product.price }}</td>
+                        <td>{{ product.name }}</td>
                         <td>
                           <button class="btn btn-primary" (click)="removeProduct(product.id)">Xóa</button>
                           &nbsp;

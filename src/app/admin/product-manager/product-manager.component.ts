@@ -12,7 +12,7 @@ export class ProductManagerComponent implements OnInit {
 
   products: Product[]
   page = 1;
-  pageSize = 5;
+  pageSize = 10;
 
   constructor(
     private productService: ProductService
