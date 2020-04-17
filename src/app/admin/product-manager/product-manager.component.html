@@ -30,7 +30,7 @@
                     <th scope="col">Giá</th>
 
                     <th scope="col">
-                      <!-- <a  [routerLink]="['/admin/product', 'add']"  class="btn btn-primary">Thêm mới</a> -->
+                      <a  [routerLink]="['/admin/product', 'add']"  class="btn btn-primary">Thêm mới</a>
                     </th>
                   </tr>
                 </thead>
@@ -46,7 +46,12 @@
                           <img class="card-img-top" src="{{ product.image }}" alt="" style="width: 200px;">
                         </td>
                         <td>{{ product.price }}</td>
-
+                        <td>
+                          <button class="btn btn-primary" (click)="removeProduct(product.id)">Xóa</button>
+                          &nbsp;
+                          <!-- <a [routerLink]="['/admin/product/edit', product.id]"  class="btn btn-primary">Sửa</a> -->
+                          <a class="btn btn-primary" >Sửa</a>
+                        </td>
 
                     </tr>
 
