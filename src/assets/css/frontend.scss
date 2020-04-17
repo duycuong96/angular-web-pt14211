@@ -82,7 +82,8 @@ ol {
 /* CSS Document */
 
 header {
-    position: absolute;
+    position: relative;
+    background-color: #fff;
     z-index: 9;
     width: 100%;
 }
@@ -105,7 +106,7 @@ nav {
     display: initial;
     margin: 0;
     letter-spacing: 1px;
-    color: #fff;
+    color: #e76831;
     font-size: 1em;
     font-weight: 700;
     text-shadow: 2px 5px 3px rgba(0, 0, 0, 0.06);
@@ -150,7 +151,7 @@ nav ul li {
     padding-left: 0;
     padding-right: 0;
     padding: 10px 0;
-    color: #fff;
+    color: #000;
     text-transform: uppercase;
     -webkit-transition: 0.5s all ease;
     -moz-transition: 0.5s all ease;
@@ -167,17 +168,17 @@ nav ul li {
 
 
 .menu li ul li:hover {
-    background: #f8f9fa;
+    background: #fff;
 }
 
 /* Background color change on Hover */
 
 nav .menu li a:hover {
-    color: #ffffff;
+    color: #000;
 }
 
 .menu li.active a {
-    color: #ffffff;
+    color: #000;
 }
 
 /* Hide Dropdowns by Default
