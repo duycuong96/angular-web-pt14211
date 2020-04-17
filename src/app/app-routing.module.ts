@@ -4,6 +4,7 @@ import { HomeComponent } from './client/home/home.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { ProductManagerComponent } from './admin/product-manager/product-manager.component';
+import { ShopComponent } from './client/shop/shop.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'shop',
+    component: ShopComponent
   },
   {
     path: 'admin',
