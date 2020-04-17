@@ -13,42 +13,14 @@ import { PageNotFoundComponent } from './client/page-not-found/page-not-found.co
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-
-  {
-    path: 'shop',
-    component: ShopComponent
-  },
-  {
-    path: 'admin',
-    component: AdminComponent,
     children: [
       {
         path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full'
+        loadChildren: () => import('./client/client.module').then(m => m.ClientModule)
       },
       {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: 'product',
-        component: ProductManagerComponent
-      },
-      {
-        path: 'product/add',
-        component: AddProductManagerComponent
-      },
-      {
-        path: 'product/edit/:productId',
-        component: EditProductManagerComponent
+        path : 'admin',
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
       }
 
     ]
