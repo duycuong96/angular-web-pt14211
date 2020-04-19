@@ -11,7 +11,7 @@ export class NewProductsHomeComponent implements OnInit {
 
   products: Product[]
   page = 1;
-  pageSize = 9;
+  pageSize = 12;
 
   constructor(
     private productService: ProductService

@@ -10,7 +10,7 @@ body {
     margin: 0;
     font-size: 100%;
     background: #fff;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
 }
 body a {
@@ -35,7 +35,7 @@ input[type="search"] {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1,
@@ -47,7 +47,7 @@ h6 {
     margin: 0;
     letter-spacing: 1px;
     font-weight: 600;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 p {
@@ -63,8 +63,8 @@ ul {
 }
 
 body img {
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
     -o-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -536,7 +536,7 @@ ul.events-icons.new-inf img {
 .feature-grids span {
     font-size: 1.5em;
     text-align: center;
-    color: #ff4c4c;
+    color: #e76831;
     line-height: 3em;
 }
 
@@ -606,7 +606,9 @@ ul.tic-info li {
 /*-- /New-Arrivals --*/
 .product-shoe-info {
     padding: 15px;
-    border: 1px solid #e4e4e4;
+    // border: 1px solid #e4e4e4;
+    box-shadow: 0 5px 5px rgba(85, 85, 85, 0.2);
+
 }
 
 .item-info-product h4 a {
@@ -893,7 +895,7 @@ padding:5.5em 2em 0 0;
     font-size: 0.8725em;
     text-transform: uppercase;
     text-shadow: 0 1px 0 #ffffff;
-    text-decoration: underline;
+    text-decoration: none;
 }
 h3.shop-sing {
     text-transform: uppercase;
