@@ -5,7 +5,7 @@
 
       <!-- logo start -->
       <div class="logo title-area">
-        <h1 class="site-title"><a href="index.html">Cuong</a></h1>
+        <h1 class="site-title"><a href="index.html" translate>Cuong</a></h1>
       </div>
 
     <!-- if logo is image enable this -->
@@ -37,15 +37,22 @@
               <li><a href="people.html">People cards</a></li>
             </ul>
           </li> -->
-          <li><a href="pricing.html"><i class="fas fa-clipboard-list"></i><span>Danh mục sản phẩm</span></a></li>
-          <li><a routerLink="/admin/product"><i class="fab fa-product-hunt"></i> <span>Quản lý sản phẩm</span></a></li>
+          <li><a href="pricing.html"><i class="fas fa-clipboard-list"></i><span translate>Danh mục sản phẩm</span></a></li>
+          <li><a routerLink="/admin/product"><i class="fab fa-product-hunt"></i> <span translate>Quản lý sản phẩm</span></a></li>
         </ul>
         <!-- //sidebar nav end -->
         <!-- toggle button start -->
-        <!-- <a class="toggle-btn">
-          <i class="fa fa-angle-double-left menu-collapsed__left"><span>Collapse Sidebar</span></i>
-          <i class="fa fa-angle-double-right menu-collapsed__right"></i>
-        </a> -->
+        <a class="toggle-btn">
+          <!-- <i class="fa fa-angle-double-left menu-collapsed__left"><span>Collapse Sidebar</span></i>
+          <i class="fa fa-angle-double-right menu-collapsed__right"></i> -->
+          <div ngbDropdown class="text-center">
+            <button class="btn btn-block btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>Ngôn ngữ</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownConfig" style="right:0px;" class="text-center">
+              <button ngbDropdownItem  (click)="switchLanguage('en')">Tiếng Anh</button>
+              <button ngbDropdownItem  (click)="switchLanguage('vn')">Tiếng Việt</button>
+            </div>
+          </div>
+        </a>
         <!-- //toggle button end -->
       </div>
     </div>
@@ -55,7 +62,9 @@
 
       <!-- notification menu start -->
       <div class="menu-right">
+
         <div class="navbar user-panel-top">
+
           <div class="search-box">
             <form action="#search-results.html" method="get">
               <input class="search-input" placeholder="Tìm kiếm..." type="search" id="search">

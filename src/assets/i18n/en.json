@@ -1,5 +1,8 @@
 {
-  "Home":"Homepage",
+  "Home":"Home",
   "Giới thiệu":"About",
-  "Liên hệ": "Contact"
+  "Liên hệ": "Contact",
+  "Cuong":"Cuongvd",
+  "Danh mục sản phẩm":"Categories Manager",
+  "Quản lý sản phẩm":"Products Manager"
 }

@@ -18,19 +18,19 @@ export class ProductService {
     return this.http.get<Category[]>(this.categoriesApi);
   }
 
-  // getProduct(id): Observable<Category>{
+  // getCategory(id): Observable<Category>{
   //   return this.http.get<Category>(`${this.categoriesApi}/${id}`);
   // }
 
-  // removeProduct(id): Observable<Category>{
+  // removeCategory(id): Observable<Category>{
   //   return this.http.delete<Category>(`${this.categoriesApi}/${id}`);
   // }
 
-  // addProduct(product): Observable<Category>{
+  // addCategory(product): Observable<Category>{
   //   return this.http.post<Category>(`${this.categoriesApi}`, product);
   // }
 
-  // updateProduct(product): Observable<Category>{
+  // updateCategory(product): Observable<Category>{
   //   return this.http.put<Category>(`${this.categoriesApi}/${product.id}`, product)
   // }
 
