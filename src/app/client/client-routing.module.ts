@@ -6,6 +6,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ShopSingleComponent } from './shop-single/shop-single.component';
+import { PostClientComponent } from './post-client/post-client.component';
+import { PostDetailClientComponent } from './post-detail-client/post-detail-client.component';
 
 const clientRoutes: Routes = [
   {
@@ -23,12 +25,18 @@ const clientRoutes: Routes = [
       },
       {
         path: 'shop',
-        component: ShopComponent
+        children: [
+          {
+            path: '',
+            component: ShopComponent
+          },
+          {
+            path: ':productId',
+            component: ShopSingleComponent
+          },
+        ]
       },
-      {
-        path: 'shop/:productId',
-        component: ShopSingleComponent
-      },
+
       {
         path: 'about',
         component: AboutComponent
@@ -36,6 +44,19 @@ const clientRoutes: Routes = [
       {
         path: 'contact',
         component: ContactComponent
+      },
+      {
+        path: 'new',
+        children: [
+          {
+            path: '',
+            component: PostClientComponent
+          },
+          {
+            path: ':postId',
+            component: PostDetailClientComponent
+          }
+        ]
       }
     ]
 

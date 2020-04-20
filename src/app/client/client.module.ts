@@ -6,6 +6,8 @@ import { LayoutClientModule } from './layouts/layouts.module';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { ShopSingleComponent } from './shop-single/shop-single.component';
+import { PostClientComponent } from './post-client/post-client.component';
+import { PostDetailClientComponent } from './post-detail-client/post-detail-client.component';
 
 @NgModule({
   imports: [
@@ -20,7 +22,11 @@ import { ShopSingleComponent } from './shop-single/shop-single.component';
 
   AboutComponent,
 
-  ShopSingleComponent]
+  ShopSingleComponent,
+
+  PostClientComponent,
+
+  PostDetailClientComponent]
 })
 
 export class ClientModule {}

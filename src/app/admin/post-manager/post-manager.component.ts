@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { Post } from '../../models/post';
 import { PostService } from '../../services/post.service'
@@ -6,7 +7,9 @@ import { PostService } from '../../services/post.service'
 @Component({
   selector: 'app-post-manager',
   templateUrl: './post-manager.component.html',
-  styleUrls: ['./post-manager.component.scss']
+  styleUrls: ['./post-manager.component.scss',
+
+]
 })
 export class PostManagerComponent implements OnInit {
 
@@ -15,11 +18,15 @@ export class PostManagerComponent implements OnInit {
   pageSize = 10;
 
   constructor(
-    private postService: PostService
-  ) { }
+    private postService: PostService,
+    config: NgbRatingConfig
+  ) {
+    config.max = 5;
+    config.readonly = true;
+   }
 
   ngOnInit(): void {
-
+    this.getPosts();
   }
 
   getPosts(){
