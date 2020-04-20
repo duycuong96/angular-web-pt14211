@@ -38,6 +38,10 @@ import { BannerService } from './services/banner.service';
 import { AddBannerManagerComponent } from './admin/banner-manager/add-banner-manager/add-banner-manager.component';
 import { BannerManagerComponent } from './admin/banner-manager/banner-manager.component';
 import { EditBannerManagerComponent } from './admin/banner-manager/edit-banner-manager/edit-banner-manager.component';
+import { PostService } from './services/post.service';
+import { PostManagerComponent } from './admin/post-manager/post-manager.component';
+import { AddPostManagerComponent } from './admin/post-manager/add-post-manager/add-post-manager.component';
+import { EditPostManagerComponent } from './admin/post-manager/edit-post-manager/edit-post-manager.component';
 
 // loader module
 export  function  HttpLoaderFactory(http:  HttpClient) {
@@ -59,6 +63,9 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     BannerManagerComponent,
     AddBannerManagerComponent,
     EditBannerManagerComponent,
+    PostManagerComponent,
+    AddPostManagerComponent,
+    EditPostManagerComponent,
     PageNotFoundComponent,
 
 
@@ -86,7 +93,11 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
 
   ],
   exports: [TranslateModule],
-  providers: [ProductService, BannerService],
+  providers: [
+    ProductService,
+    BannerService,
+    PostService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
