@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,11 @@ import { ClientModule } from './client/client.module';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { HttpClient } from  '@angular/common/http';
+import { LayoutAdminModule } from './admin/layouts/layouts.module';
+import { BannerService } from './services/banner.service';
+import { AddBannerManagerComponent } from './admin/banner-manager/add-banner-manager/add-banner-manager.component';
+import { BannerManagerComponent } from './admin/banner-manager/banner-manager.component';
+import { EditBannerManagerComponent } from './admin/banner-manager/edit-banner-manager/edit-banner-manager.component';
 
 // loader module
 export  function  HttpLoaderFactory(http:  HttpClient) {
@@ -44,22 +50,29 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     AppComponent,
     AdminComponent,
     HomeComponent,
+    ShopComponent,
+    HomepageComponent,
     DashboardComponent,
     ProductManagerComponent,
-    ShopComponent,
     AddProductManagerComponent,
     EditProductManagerComponent,
+    BannerManagerComponent,
+    AddBannerManagerComponent,
+    EditBannerManagerComponent,
     PageNotFoundComponent,
-    HomepageComponent
+
+
 
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
     LayoutClientModule,
+    LayoutAdminModule,
     AppRoutingModule,
     AdminModule,
     ClientModule,
@@ -73,7 +86,7 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
 
   ],
   exports: [TranslateModule],
-  providers: [ProductService],
+  providers: [ProductService, BannerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

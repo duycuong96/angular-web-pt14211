@@ -1,0 +1,57 @@
+<div class="sidebar-menu sticky-sidebar-menu">
+
+  <!-- logo start -->
+  <div class="logo title-area">
+    <h1 class="site-title"><a href="index.html" translate>Cuong</a></h1>
+  </div>
+
+<!-- if logo is image enable this -->
+  <!-- image logo --
+  <div class="logo">
+    <a href="index.html">
+      <img src="image-path" alt="Your logo" title="Your logo" class="img-fluid" style="height:35px;" />
+    </a>
+  </div>
+  <!-- //image logo -->
+
+  <div class="logo-icon text-center">
+    <a href="index.html" title="logo"><img src="assets/images/logo.png" alt="logo-icon"> </a>
+  </div>
+  <!-- //logo end -->
+
+  <div class="sidebar-menu-inner">
+
+    <!-- sidebar nav start -->
+    <ul class="nav nav-pills nav-stacked custom-nav pt-4">
+      <li class="active"><a routerLink="/admin/dashboard"><i class="fas fa-tachometer-alt"></i><span> Dashboard</span></a>
+      </li>
+      <!-- <li class="menu-list">
+        <a href="#"><i class="fa fa-cogs"></i>
+          <span>Elements <i class="lnr lnr-chevron-right"></i></span></a>
+        <ul class="sub-menu-list">
+          <li><a href="carousels.html">Carousels</a> </li>
+          <li><a href="cards.html">Default cards</a> </li>
+          <li><a href="people.html">People cards</a></li>
+        </ul>
+      </li> -->
+      <li><a href="pricing.html"><i class="fas fa-clipboard-list"></i><span translate>Danh mục sản phẩm</span></a></li>
+      <li><a routerLink="/admin/product"><i class="fab fa-product-hunt"></i> <span translate>Quản lý sản phẩm</span></a></li>
+      <li><a routerLink="/admin/banner"><i class="fas fa-ad"></i> <span translate>Banner</span></a></li>
+      <li><a routerLink="/admin/product"><i class="far fa-address-book"></i> <span translate>Bài viết</span></a></li>
+    </ul>
+    <!-- //sidebar nav end -->
+    <!-- toggle button start -->
+    <a class="toggle-btn">
+      <!-- <i class="fa fa-angle-double-left menu-collapsed__left"><span>Collapse Sidebar</span></i>
+      <i class="fa fa-angle-double-right menu-collapsed__right"></i> -->
+      <div ngbDropdown class="text-center">
+        <button class="btn btn-block btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>Ngôn ngữ</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownConfig" style="right:0px;" class="text-center">
+          <button ngbDropdownItem  (click)="switchLanguage('en')">Tiếng Anh</button>
+          <button ngbDropdownItem  (click)="switchLanguage('vn')">Tiếng Việt</button>
+        </div>
+      </div>
+    </a>
+    <!-- //toggle button end -->
+  </div>
+</div>

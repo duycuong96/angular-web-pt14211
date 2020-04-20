@@ -10,7 +10,7 @@ import {ProductService} from '../../services/product.service'
 })
 export class ProductManagerComponent implements OnInit {
 
-  products: Product[]
+  products: Product[];
   page = 1;
   pageSize = 10;
 

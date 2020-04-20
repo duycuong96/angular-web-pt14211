@@ -39,33 +39,29 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Tên</th>
-                    <th scope="col">Hình ảnh</th>
-                    <th scope="col">Giá</th>
-                    <th>Danh mục</th>
+                    <th scope="col">Url</th>
 
                     <th scope="col">
-                      <a  [routerLink]="['/admin/product', 'add']"  class="btn btn-primary">Thêm mới</a>
+                      <a  [routerLink]="['/admin/banner', 'add']"  class="btn btn-primary">Thêm mới</a>
                     </th>
                   </tr>
                 </thead>
 
 
                   <tbody>
-                    <tr *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                    <tr *ngFor="let banner of banners | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                       <!-- content here -->
 
-                        <th class="row">{{ product.id }}</th>
-                        <td>{{ product.name }}</td>
+                        <th class="row">{{ banner.id }}</th>
+
                         <td>
-                          <img class="card-img-top" src="{{ product.image }}" alt="" style="width: 50px;">
+                          <img class="card-img-top" src="{{ banner.url }}" alt="" style="width: 250px;">
                         </td>
-                        <td>{{ product.price }}</td>
-                        <td>{{ product.name }}</td>
+
                         <td>
-                          <button class="btn btn-primary" (click)="removeProduct(product.id)">Xóa</button>
+                          <button class="btn btn-primary" (click)="removeBanner(banner.id)">Xóa</button>
                           &nbsp;
-                          <a [routerLink]="['/admin/product/edit', product.id]"  class="btn btn-primary">Sửa</a>
+                          <a [routerLink]="['/admin/banner/edit', banner.id]"  class="btn btn-primary">Sửa</a>
                           <!-- <a class="btn btn-primary" >Sửa</a> -->
                         </td>
 
@@ -80,9 +76,10 @@
                 <div class="mb-4">
                   <!-- <a href="#" class="btn btn-lg btn-primary btn-style">Thêm mới</a> -->
                   <ngb-pagination
-                [(page)]="page"
-                [pageSize]="pageSize"
-                [collectionSize]="products.length"></ngb-pagination>
+                      [(page)]="page"
+                      [pageSize]="pageSize"
+                      [collectionSize]="banners.length">
+                  </ngb-pagination>
                 </div>
 
               </div>
@@ -95,3 +92,4 @@
     </section></div>
   </div>
 </section>
+
