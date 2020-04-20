@@ -8,6 +8,9 @@ import { EditProductManagerComponent } from './product-manager/edit-product-mana
 import { BannerManagerComponent } from './banner-manager/banner-manager.component';
 import { AddBannerManagerComponent } from './banner-manager/add-banner-manager/add-banner-manager.component';
 import { EditBannerManagerComponent } from './banner-manager/edit-banner-manager/edit-banner-manager.component';
+import { PostManagerComponent } from './post-manager/post-manager.component';
+import { AddPostManagerComponent } from './post-manager/add-post-manager/add-post-manager.component';
+import { EditPostManagerComponent } from './post-manager/edit-post-manager/edit-post-manager.component';
 
 
 
@@ -39,16 +42,39 @@ const adminRoutes: Routes = [
       },
       {
         path: 'banner',
-        component: BannerManagerComponent
+        children: [
+          {
+            path: '',
+            component: BannerManagerComponent
+          },
+          {
+            path: 'add',
+            component: AddBannerManagerComponent
+          },
+          {
+            path: 'edit/:bannerId',
+            component: EditBannerManagerComponent
+          }
+        ]
       },
       {
-        path: 'banner/add',
-        component: AddBannerManagerComponent
-      },
-      {
-        path: 'banner/edit/:bannerId',
-        component: EditBannerManagerComponent
+        path: 'post',
+        children: [
+          {
+            path: '',
+            component: PostManagerComponent
+          },
+          {
+            path: 'add',
+            component: AddPostManagerComponent
+          },
+          {
+            path: 'edit/:postId',
+            component: EditPostManagerComponent
+          }
+        ]
       }
+
 
     ]
   },
