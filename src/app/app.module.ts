@@ -41,6 +41,10 @@ import { PostService } from './services/post.service';
 import { PostManagerComponent } from './admin/post-manager/post-manager.component';
 import { AddPostManagerComponent } from './admin/post-manager/add-post-manager/add-post-manager.component';
 import { EditPostManagerComponent } from './admin/post-manager/edit-post-manager/edit-post-manager.component';
+import { CategoryManagerComponent } from './admin/category-manager/category-manager.component';
+import { AddCategoryManagerComponent } from './admin/category-manager/add-category-manager/add-category-manager.component';
+import { EditCategoryManagerComponent } from './admin/category-manager/edit-category-manager/edit-category-manager.component';
+
 
 // loader module
 export  function  HttpLoaderFactory(http:  HttpClient) {
@@ -65,7 +69,11 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     PostManagerComponent,
     AddPostManagerComponent,
     EditPostManagerComponent,
+    CategoryManagerComponent,
+    AddCategoryManagerComponent,
+    EditCategoryManagerComponent,
     PageNotFoundComponent,
+
 
   ],
   imports: [

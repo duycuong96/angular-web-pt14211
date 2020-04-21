@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class ProductService {
 
-  categoriesApi = 'https://5e9a8b2ebc561b0016af3e46.mockapi.io/product';
+  categoriesApi = 'https://5e9a8b2ebc561b0016af3e46.mockapi.io/categories';
 
   constructor(
     private http: HttpClient
@@ -18,21 +18,21 @@ export class ProductService {
     return this.http.get<Category[]>(this.categoriesApi);
   }
 
-  // getCategory(id): Observable<Category>{
-  //   return this.http.get<Category>(`${this.categoriesApi}/${id}`);
-  // }
+  getCategory(id): Observable<Category>{
+    return this.http.get<Category>(`${this.categoriesApi}/${id}`);
+  }
 
-  // removeCategory(id): Observable<Category>{
-  //   return this.http.delete<Category>(`${this.categoriesApi}/${id}`);
-  // }
+  removeCategory(id): Observable<Category>{
+    return this.http.delete<Category>(`${this.categoriesApi}/${id}`);
+  }
 
-  // addCategory(product): Observable<Category>{
-  //   return this.http.post<Category>(`${this.categoriesApi}`, product);
-  // }
+  addCategory(product): Observable<Category>{
+    return this.http.post<Category>(`${this.categoriesApi}`, product);
+  }
 
-  // updateCategory(product): Observable<Category>{
-  //   return this.http.put<Category>(`${this.categoriesApi}/${product.id}`, product)
-  // }
+  updateCategory(product): Observable<Category>{
+    return this.http.put<Category>(`${this.categoriesApi}/${product.id}`, product)
+  }
 
 
 
