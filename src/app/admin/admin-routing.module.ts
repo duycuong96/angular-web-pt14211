@@ -11,6 +11,9 @@ import { EditBannerManagerComponent } from './banner-manager/edit-banner-manager
 import { PostManagerComponent } from './post-manager/post-manager.component';
 import { AddPostManagerComponent } from './post-manager/add-post-manager/add-post-manager.component';
 import { EditPostManagerComponent } from './post-manager/edit-post-manager/edit-post-manager.component';
+import { CategoryManagerComponent } from './category-manager/category-manager.component';
+import { AddCategoryManagerComponent } from './category-manager/add-category-manager/add-category-manager.component';
+import { EditCategoryManagerComponent } from './category-manager/edit-category-manager/edit-category-manager.component';
 
 
 
@@ -39,6 +42,23 @@ const adminRoutes: Routes = [
       {
         path: 'product/edit/:productId',
         component: EditProductManagerComponent
+      },
+      {
+        path: 'category',
+        children: [
+          {
+            path: '',
+            component: CategoryManagerComponent
+          },
+          {
+            path: 'add',
+            component: AddCategoryManagerComponent
+          },
+          {
+            path: 'edit/:categoryId',
+            component: EditCategoryManagerComponent
+          }
+        ]
       },
       {
         path: 'banner',
@@ -73,7 +93,8 @@ const adminRoutes: Routes = [
             component: EditPostManagerComponent
           }
         ]
-      }
+      },
+
 
 
     ]

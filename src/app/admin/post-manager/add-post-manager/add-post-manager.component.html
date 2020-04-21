@@ -24,15 +24,15 @@
               <form>
                 <div class="form-group">
                   <label for="">Tiêu đề</label>
-                  <input type="text" class="form-control" name="name" [(ngModel)]="post.title">
+                  <input type="text" class="form-control" name="title" [(ngModel)]="post.title">
                 </div>
                 <div class="form-group">
                   <label for="">Nội dung</label>
-                  <input type="text" class="form-control" name="price" [(ngModel)]="post.content">
+                  <input type="text" class="form-control" name="content" [(ngModel)]="post.content">
                 </div>
                 <div class="form-group">
                   <label for="">Url hình ảnh</label>
-                  <input type="text" class="form-control" name="price" [(ngModel)]="post.image">
+                  <input type="text" class="form-control" name="image" [(ngModel)]="post.image">
                 </div>
 
                 <button type="submit" class="btn btn-primary" (click)="addPost()">Submit</button>

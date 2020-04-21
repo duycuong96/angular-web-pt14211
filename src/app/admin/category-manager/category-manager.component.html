@@ -1,1 +1,91 @@
-<p>category-manager works!</p>
+<nav aria-label="breadcrumb" class="mb-4">
+  <ol class="breadcrumb my-breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/admin/dashboard" >Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Quản lý sản phẩm</li>
+  </ol>
+</nav>
+
+<section class="pricing">
+  <div class="card card_border mb-5">
+    <div class="cards__heading">
+      <div class="row">
+        <div class="col-8">
+          <h3>Quản lý sản phẩm</h3>
+
+        </div>
+        <div class="col-4">
+          <div class="search-box">
+            <form action="#search-results.html" method="get">
+              <input class="search-input" placeholder="Tìm kiếm..." type="search" id="search">
+              <button class="search-submit" value=""><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="card-body">
+      <!-- pricing version 1 -->
+
+      <!--//BLOCK ROW END-->
+
+      <section class="w3l-pricing1">
+        <div class="row px-2">
+
+          <div class="col-md-12 px-2">
+            <div class="mb-4 price-card price-card2 p-lg-4 p-md-3 p-4 recomemded-price">
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tên</th>
+
+
+                    <th scope="col">
+                      <a  [routerLink]="['/admin/category', 'add']"  class="btn btn-primary">Thêm mới</a>
+                    </th>
+                  </tr>
+                </thead>
+
+
+                  <tbody>
+                    <tr *ngFor="let category of categories | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                      <!-- content here -->
+
+                        <th class="row">{{ category.id }}</th>
+                        <td>{{ category.name }}</td>
+
+                        <td>
+                          <button class="btn btn-primary" (click)="removeCategory(category.id)">Xóa</button>
+                          &nbsp;
+                          <a [routerLink]="['/admin/category/edit', category.id]"  class="btn btn-primary">Sửa</a>
+                          <!-- <a class="btn btn-primary" >Sửa</a> -->
+                        </td>
+
+                    </tr>
+
+                  </tbody>
+
+
+              </table>
+              <hr>
+              <div>
+                <div class="mb-4">
+                  <!-- <a href="#" class="btn btn-lg btn-primary btn-style">Thêm mới</a> -->
+                  <ngb-pagination
+                [(page)]="page"
+                [pageSize]="pageSize"
+                [collectionSize]="categories.length"></ngb-pagination>
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+    </section></div>
+  </div>
+</section>

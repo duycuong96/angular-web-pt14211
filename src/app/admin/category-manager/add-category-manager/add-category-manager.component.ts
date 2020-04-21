@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import {Category} from '../../../models/category';
+import {CategoryService} from '../../../services/category.service';
 
 @Component({
   selector: 'app-add-category-manager',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCategoryManagerComponent implements OnInit {
 
-  constructor() { }
+  category: Category = new Category();
+  constructor(
+    private categoryService: CategoryService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  addCategory(){
+    this.categoryService.addCategory(this.category).subscribe(
+      data => this.router.navigateByUrl('admin/category')
+    )
   }
 
 }

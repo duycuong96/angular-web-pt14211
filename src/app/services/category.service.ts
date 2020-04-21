@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 
-export class ProductService {
+export class CategoryService {
 
   categoriesApi = 'https://5e9a8b2ebc561b0016af3e46.mockapi.io/categories';
 
@@ -26,12 +26,12 @@ export class ProductService {
     return this.http.delete<Category>(`${this.categoriesApi}/${id}`);
   }
 
-  addCategory(product): Observable<Category>{
-    return this.http.post<Category>(`${this.categoriesApi}`, product);
+  addCategory(category): Observable<Category>{
+    return this.http.post<Category>(`${this.categoriesApi}`, category);
   }
 
-  updateCategory(product): Observable<Category>{
-    return this.http.put<Category>(`${this.categoriesApi}/${product.id}`, product)
+  updateCategory(category): Observable<Category>{
+    return this.http.put<Category>(`${this.categoriesApi}/${category.id}`, category)
   }
 
 

@@ -44,6 +44,7 @@ import { EditPostManagerComponent } from './admin/post-manager/edit-post-manager
 import { CategoryManagerComponent } from './admin/category-manager/category-manager.component';
 import { AddCategoryManagerComponent } from './admin/category-manager/add-category-manager/add-category-manager.component';
 import { EditCategoryManagerComponent } from './admin/category-manager/edit-category-manager/edit-category-manager.component';
+import { CategoryService } from './services/category.service';
 
 
 // loader module
@@ -100,7 +101,8 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
   providers: [
     ProductService,
     BannerService,
-    PostService
+    PostService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
