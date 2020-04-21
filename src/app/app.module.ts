@@ -18,7 +18,6 @@ import { EditProductManagerComponent } from './admin/product-manager/edit-produc
 import { ProductManagerComponent } from './admin/product-manager/product-manager.component';
 
 
-
 import { ShopComponent } from './client/shop/shop.component';
 import { LayoutClientModule } from './client/layouts/layouts.module';
 import { PageNotFoundComponent } from './client/page-not-found/page-not-found.component';
@@ -67,9 +66,6 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     AddPostManagerComponent,
     EditPostManagerComponent,
     PageNotFoundComponent,
-
-
-
 
   ],
   imports: [
