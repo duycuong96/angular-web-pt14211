@@ -16,7 +16,7 @@ export class AddProductManagerComponent implements OnInit {
     'id': new FormControl(null),
     'name': new FormControl('', [
       Validators.required,
-      Validators.minLength(4)
+      Validators.minLength(6)
     ]),
     'price': new FormControl('', [
       Validators.required,

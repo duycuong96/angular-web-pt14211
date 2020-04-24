@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class BannerService {
 
-  bannersApi = 'https://5e9a8b2ebc561b0016af3e46.mockapi.io/banner';
+  bannersApi = 'http://localhost:3000/banner';
 
   constructor(
     private http: HttpClient

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-homepage',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  images = ['https://file.hstatic.net/1000230642/file/banner_hunter1__lp__f23ae981ad4c4098a6c6e2db3355bd32_master.jpg', 'http://skytheme.epizy.com/skytheme/images/slider/3.jpg', 'http://skytheme.epizy.com/skytheme/images/slider/3.jpg']
-  constructor() { }
+  // images =  ['assets/images/anh1.jpg', 'assets/images/anh2.jpg', 'assets/images/anh3.jpg'];
+  images = [700, 533, 807].map((n) => `https://picsum.photos/id/${n}/550/570`);
+  constructor(config: NgbCarouselConfig) {
+    config.interval = 10000;
+
+  }
 
   ngOnInit(): void {
   }
