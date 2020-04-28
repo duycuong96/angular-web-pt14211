@@ -65,16 +65,12 @@
 <section class="testimonials">
   <div class="">
     <div class="row title-area">
-      <div class="col-md-6 site-title">
+      <div *ngFor="let banner of banners" class="col-md-6 site-title">
         <a href="">
-          <img src="https://file.hstatic.net/1000230642/file/banner_bst_moi_2020_482f5bf89b84450080be6e5c6e665c7c_master.jpg" alt="" width="100%" >
+          <img src="{{ banner.url }}" alt="" width="100%" >
         </a>
       </div>
-      <div class="col-md-6 site-title">
-        <a href="">
-          <img src="https://file.hstatic.net/1000230642/file/banner_sale_t4_a7e1f2feac7b413fb094c81a13024b6c_master.png" alt="" width="100%" >
-        </a>
-      </div>
+
     </div>
   </div>
 </section>

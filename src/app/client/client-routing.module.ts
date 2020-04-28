@@ -41,8 +41,18 @@ const clientRoutes: Routes = [
       },
       {
         path: 'search',
-        component: SearchComponent
+        children: [
+          {
+            path: '',
+            component: SearchComponent
+          },
+          {
+            path: ':search',
+            component: SearchComponent
+          },
+        ]
       },
+
       {
         path: 'category',
         children: [

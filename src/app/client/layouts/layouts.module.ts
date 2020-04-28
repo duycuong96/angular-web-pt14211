@@ -1,6 +1,9 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { FooterFeComponent } from './footer-fe/footer-fe.component'
 import { RouterModule } from '@angular/router';
@@ -32,6 +35,7 @@ const layoutClient = [
   ],
   imports:[
     RouterModule,
+    FormsModule,
     CommonModule,
     NgbModule
   ],

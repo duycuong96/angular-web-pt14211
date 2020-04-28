@@ -42,7 +42,7 @@
                     <th scope="col">Tên</th>
                     <th scope="col">Hình ảnh</th>
                     <th scope="col">Giá</th>
-                    <th>Danh mục</th>
+                    <th>Số lượng</th>
 
                     <th scope="col">
                       <a  [routerLink]="['/admin/product', 'add']"  class="btn btn-primary">Thêm mới</a>
@@ -61,9 +61,9 @@
                           <img class="card-img-top" src="{{ product.image }}" alt="" style="width: 50px;">
                         </td>
                         <td>{{ product.price }}</td>
-                        <td>{{ product.categoryId }}</td>
+                        <td>{{ product.quantity }}</td>
                         <td>
-                          <button class="btn btn-primary" (click)="removeProduct(product.id)">Xóa</button>
+                          <button onclick="return xoa()" class="btn btn-primary" (click)="removeProduct(product.id)">Xóa</button>
                           &nbsp;
                           <a [routerLink]="['/admin/product/edit', product.id]"  class="btn btn-primary">Sửa</a>
                           <!-- <a class="btn btn-primary" >Sửa</a> -->
@@ -95,4 +95,3 @@
     </section></div>
   </div>
 </section>
-

@@ -2,10 +2,13 @@
 
   <div class="search-bar w3layouts-newsletter">
       <h3 class="sear-head">Tìm kiếm...</h3>
-      <form action="/search" method="get" class="d-flex">
-          <input type="search" placeholder="Tìm kiếm tên sản phẩm ..." name="name" class="form-control" required="">
+
+      <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"/>
+
+        <a routerLink="/search/{{ model }}">
           <button class="btn btn-primary"><span class="fas fa-search" aria-hidden="true"></span></button>
-      </form>
+          </a>
+
   </div>
   <!-- preference -->
   <div class="left-side my-4">
