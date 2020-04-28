@@ -53,7 +53,7 @@
                     <tr *ngFor="let category of categories | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                       <!-- content here -->
 
-                        <th class="row">{{ category.id }}</th>
+                        <td class="row">{{ category.id }}</td>
                         <td>{{ category.name }}</td>
 
                         <td>

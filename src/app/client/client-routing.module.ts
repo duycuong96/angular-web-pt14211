@@ -8,6 +8,9 @@ import { ContactComponent } from './contact/contact.component';
 import { ShopSingleComponent } from './shop-single/shop-single.component';
 import { PostClientComponent } from './post-client/post-client.component';
 import { PostDetailClientComponent } from './post-detail-client/post-detail-client.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryProductComponent } from './category-product/category-product.component';
+import { SearchComponent } from './search/search.component';
 
 const clientRoutes: Routes = [
   {
@@ -33,6 +36,23 @@ const clientRoutes: Routes = [
           {
             path: ':productId',
             component: ShopSingleComponent
+          }
+        ]
+      },
+      {
+        path: 'search',
+        component: SearchComponent
+      },
+      {
+        path: 'category',
+        children: [
+          {
+            path: '',
+            component: CategoryComponent
+          },
+          {
+            path: ':categoryId',
+            component: CategoryProductComponent
           },
         ]
       },

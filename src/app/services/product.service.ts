@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class ProductService {
 
-  productsApi = 'https://5e9a8b2ebc561b0016af3e46.mockapi.io/product';
+  productsApi = 'https://angular-pt14211-cuongvdph06938.herokuapp.com/products';
 
   constructor(
     private http: HttpClient
@@ -16,6 +16,11 @@ export class ProductService {
 
   getProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(this.productsApi);
+  }
+
+  getProductsCategory(categoryId: number): Observable<Product[]>{
+    let  url = `${this.productsApi}/?categoryId=${categoryId}`;
+    return this.http.get<Product[]>(url);
   }
 
   getProduct(id): Observable<Product>{

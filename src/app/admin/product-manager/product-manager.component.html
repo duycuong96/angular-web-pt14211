@@ -61,7 +61,7 @@
                           <img class="card-img-top" src="{{ product.image }}" alt="" style="width: 50px;">
                         </td>
                         <td>{{ product.price }}</td>
-                        <td>{{ product.name }}</td>
+                        <td>{{ product.categoryId }}</td>
                         <td>
                           <button class="btn btn-primary" (click)="removeProduct(product.id)">Xóa</button>
                           &nbsp;
@@ -95,3 +95,4 @@
     </section></div>
   </div>
 </section>
+

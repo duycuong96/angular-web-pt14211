@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class BannerService {
 
-  bannersApi = 'http://localhost:3000/banner';
+  bannersApi = 'https://angular-pt14211-cuongvdph06938.herokuapp.com/banners';
 
   constructor(
     private http: HttpClient

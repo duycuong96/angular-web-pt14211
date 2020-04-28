@@ -7,7 +7,7 @@ import { Observable } from 'rxjs'
 
 export class PostService {
 
-  postsApi = 'https://5df044e202b2d90014e1bcaf.mockapi.io/post';
+  postsApi = 'https://my-angular9-project.herokuapp.com/posts';
 
   constructor(
     private http: HttpClient

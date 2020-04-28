@@ -24,7 +24,6 @@ export class ListProductShopComponent implements OnInit {
   getProducts(){
     this.productService.getProducts().subscribe(
       data => {
-        console.log(data);
         this.products = data
       }
     )

@@ -1,6 +1,65 @@
 
     <!-- header -->
-  <app-header></app-header>
+
+  <!-- header -->
+  <header class="header">
+    <div class="container-fluid px-lg-5">
+        <!-- nav -->
+        <nav class="py-4">
+            <div id="logo" class="title-area">
+                <h1 class="site-title"><a routerLink="/home">CUONGSHOP</a></h1>
+            </div>
+
+            <label for="drop" class="toggle">Menu</label>
+            <input type="checkbox" id="drop">
+            <ul class="menu mt-2">
+                <li><a routerLink="/home" translate>Trang chủ</a></li>
+                <li><a routerLink="/new" translate>Tin tức</a></li>
+                <li><a routerLink="/about" translate>Giới thiệu</a></li>
+                <li><a routerLink="/shop">Shop</a></li>
+                <li>
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-2" class="toggle">Danh mục <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                    <a routerLink="/category" translate>Danh mục <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                    <input type="checkbox" id="drop-2">
+                    <ul >
+                        <li *ngFor="let category of categories" ><a [routerLink]="['/category', category.id]">{{ category.name }}</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="/contact" translate>Liên hệ</a></li>
+                <li>
+                  <!-- First Tier Drop Down -->
+                  <label for="drop-2" class="toggle">Tài khoản<span class="fa fa-angle-down" aria-hidden="true"></span> </label>
+                  <a routerLink="/shop">Tài khoản <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                  <input type="checkbox" id="drop-2">
+                  <ul>
+                      <li><a href="blog.html">Đăng nhập</a></li>
+                      <li><a href="shop.html">Đăng ký</a></li>
+
+                  </ul>
+                </li>
+
+              <li class="lang">
+                <button class="btn" (click)="switchLanguage('en')">
+                  <img src="../../../assets/images/en_languge.png" alt="">
+                </button>
+              </li>
+              <li class="lang">
+                <button class="btn" (click)="switchLanguage('vn')">
+                  <img src="../../../assets/images/vn_languge.png" alt="">
+                </button>
+              </li>
+
+
+            </ul>
+        </nav>
+        <!-- //nav -->
+    </div>
+</header>
+
+
+
+
   <!--//main-content-->
 
   <router-outlet></router-outlet>

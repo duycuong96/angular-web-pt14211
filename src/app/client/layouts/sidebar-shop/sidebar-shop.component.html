@@ -2,33 +2,19 @@
 
   <div class="search-bar w3layouts-newsletter">
       <h3 class="sear-head">Tìm kiếm...</h3>
-      <form action="#" method="post" class="d-flex">
-          <input type="search" placeholder="Product name..." name="search" class="form-control" required="">
+      <form action="/search" method="get" class="d-flex">
+          <input type="search" placeholder="Tìm kiếm tên sản phẩm ..." name="name" class="form-control" required="">
           <button class="btn btn-primary"><span class="fas fa-search" aria-hidden="true"></span></button>
       </form>
   </div>
   <!-- preference -->
-  <!-- <div class="left-side my-4">
-      <h3 class="sear-head">Occasion</h3>
+  <div class="left-side my-4">
+      <h3 class="sear-head">Danh mục sản phẩm</h3>
       <ul class="w3layouts-box-list">
-          <li>
-              <input type="checkbox" class="checked">
-              <span class="span">Casuals</span>
-          </li>
-          <li>
-              <input type="checkbox" class="checked">
-              <span class="span">Party</span>
-          </li>
-          <li>
-              <input type="checkbox" class="checked">
-              <span class="span">Wedding</span>
-          </li>
-          <li>
-              <input type="checkbox" class="checked">
-              <span class="span">Ethnic</span>
-          </li>
+        <li *ngFor="let category of categories" ><a [routerLink]="['/category', category.id]">{{ category.name }}</a></li>
       </ul>
-  </div> -->
+  </div>
+
   <!-- // preference -->
   <!-- discounts -->
   <!-- <div class="left-side">

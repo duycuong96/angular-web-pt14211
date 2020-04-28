@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class CategoryService {
 
-  categoriesApi = 'https://5e9a8b2ebc561b0016af3e46.mockapi.io/categories';
+  categoriesApi = 'https://angular-pt14211-cuongvdph06938.herokuapp.com/categories';
 
   constructor(
     private http: HttpClient

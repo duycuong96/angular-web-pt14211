@@ -21,24 +21,40 @@
           <div class="col-md-12 px-2">
             <div class="mb-4 price-card price-card2 p-lg-4 p-md-3 p-4 recomemded-price">
 
-              <form *ngIf="product">
+              <form *ngIf="product" [formGroup]=form>
+
                 <div class="form-group">
                   <label for="">Name</label>
-                  <input type="text" class="form-control" name="name" [(ngModel)]="product.name">
+                  <input type="text" class="form-control" formControlName="name" name="name" [(ngModel)]="product.name">
+                  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger mt-3">
+                    <p *ngIf="name.errors.required">Hãy nhập tên sản phẩm</p>
+                    <p *ngIf="name.errors.minlength">Số lượng ký tự lớn hơn 6 ký tự</p>
+                </div>
                 </div>
                 <div class="form-group">
                   <label for="">Price</label>
-                  <input type="number" class="form-control" name="price" [(ngModel)]="product.price">
+                  <input type="number" class="form-control" formControlName="price" name="price" [(ngModel)]="product.price">
+                  <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger mt-3">
+                    <p *ngIf="price.errors.required">Hãy nhập giá sản phẩm</p>
+                    <p *ngIf="price.errors.pattern">Bạn phải nhập số</p>
+                </div>
                 </div>
                 <div class="form-group">
                   <label for="">Url hình ảnh</label>
-                  <input type="text" class="form-control" name="image" [(ngModel)]="product.image">
+                  <input type="text" class="form-control" name="image" formControlName="image" [(ngModel)]="product.image">
+                  <div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger mt-3">
+                    <p *ngIf="image.errors.required">Bạn chưa thêm hình ảnh</p>
+                </div>
                 </div>
                 <div class="form-group">
                   <label for="">Mô tả</label>
-                  <input type="text" class="form-control" name="desc" [(ngModel)]="product.desc">
+                  <input type="text" class="form-control" name="desc" formControlName="desc" [(ngModel)]="product.desc">
+                  <div *ngIf="desc.invalid && (desc.dirty || desc.touched)" class="alert alert-danger mt-3">
+                    <p *ngIf="desc.errors.required">Hãy nhập tênthông tin sản phẩm</p>
+                    <p *ngIf="desc.errors.minlength">Số lượng ký tự lớn hơn 10 ký tự</p>
                 </div>
-                <button type="submit" class="btn btn-primary" (click)="updateProduct()">Save</button>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="updateProduct()">Save</button>
               </form>
 
 

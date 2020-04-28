@@ -9,6 +9,7 @@ import { NewProductsHomeComponent } from './new-products-home/new-products-home.
 import { FooterComponent } from './footer/footer.component';
 import { SidebarShopComponent } from './sidebar-shop/sidebar-shop.component';
 import { ListProductShopComponent } from './list-product-shop/list-product-shop.component';
+import { ListCategoryProductComponent } from './list-category-product/list-category-product.component';
 
 
 
@@ -19,11 +20,13 @@ const layoutClient = [
   FooterComponent,
   SidebarShopComponent,
   ListProductShopComponent,
+  ListCategoryProductComponent,
 ]
 
 @NgModule({
   declarations: [
     ...layoutClient,
+
 
 
   ],
