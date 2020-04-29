@@ -14,6 +14,7 @@ import { EditPostManagerComponent } from './post-manager/edit-post-manager/edit-
 import { CategoryManagerComponent } from './category-manager/category-manager.component';
 import { AddCategoryManagerComponent } from './category-manager/add-category-manager/add-category-manager.component';
 import { EditCategoryManagerComponent } from './category-manager/edit-category-manager/edit-category-manager.component';
+import { CommentManagerComponent } from './comment-manager/comment-manager.component';
 
 
 
@@ -90,6 +91,23 @@ const adminRoutes: Routes = [
           },
           {
             path: 'edit/:postId',
+            component: EditPostManagerComponent
+          }
+        ]
+      },
+      {
+        path: 'comment',
+        children: [
+          {
+            path: '',
+            component: CommentManagerComponent
+          },
+          {
+            path: 'add',
+            component: AddPostManagerComponent
+          },
+          {
+            path: 'edit/:commentId',
             component: EditPostManagerComponent
           }
         ]

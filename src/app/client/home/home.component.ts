@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import {Router} from "@angular/router";
+
 import { Category } from '../../models/category';
 import { CategoryService } from '../../services/category.service'
 
@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
   categories: Category[];
 
   constructor(
-    private route: Router,
     private translateService: TranslateService,
     private categoryService: CategoryService
   ) {  translateService.setDefaultLang('vn'); }
@@ -35,6 +34,5 @@ export class HomeComponent implements OnInit {
 
   switchLanguage(language: string) {
     this.translateService.use(language);
-    this.route.navigate(['home']);
   }
 }

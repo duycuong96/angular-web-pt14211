@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
 import {Product} from '../../../models/product'
+import {Category} from '../../../models/category';
+import {CategoryService} from '../../../services/category.service'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
@@ -12,6 +14,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EditProductManagerComponent implements OnInit {
   product: Product;
+  categories: Category[];
 
   form = new FormGroup({
     'id': new FormControl(null),
@@ -43,12 +46,14 @@ export class EditProductManagerComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
+    private categoryService: CategoryService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.getProduct();
+    this.getCategories();
   }
 
   getProduct(){
@@ -67,6 +72,14 @@ export class EditProductManagerComponent implements OnInit {
     this.productService.updateProduct(this.product).subscribe(
       data => {
         this.router.navigateByUrl('/admin/product');
+      }
+    )
+  }
+  getCategories(){
+    this.categoryService.getCategories().subscribe(
+      data => {
+        console.log(data);
+        this.categories = data
       }
     )
   }

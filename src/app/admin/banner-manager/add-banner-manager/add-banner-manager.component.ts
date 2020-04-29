@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Banner } from '../../../models/banner';
 import { BannerService } from '../../../services/banner.service';
-import { Router } from '@angular/router'
+
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-banner-manager',

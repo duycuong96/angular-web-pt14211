@@ -1,5 +1,6 @@
 export class Comment {
   id: number;
+  name: String;
   content: string;
-  product_id: number;
+  postId: number;
 }

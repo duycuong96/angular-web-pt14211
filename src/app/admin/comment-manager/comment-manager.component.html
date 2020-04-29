@@ -39,34 +39,26 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Tên</th>
-                    <th scope="col">Hình ảnh</th>
-                    <th scope="col">Giá</th>
-                    <th>Số lượng</th>
+                    <th scope="col">Người bình luận</th>
+                    <th>Nội dung</th>
+                    <th></th>
 
-                    <th scope="col">
-                      <a  [routerLink]="['/admin/product', 'add']"  class="btn btn-primary">Thêm mới</a>
-                    </th>
                   </tr>
                 </thead>
 
 
                   <tbody>
-                    <tr *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                    <tr *ngFor="let comment of comments | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
                       <!-- content here -->
 
-                        <th class="row">{{ product.id }}</th>
-                        <td>{{ product.name }}</td>
+                        <td class="row">{{ comment.id }}</td>
+                        <td>{{ comment.name }}</td>
+                        <td>{{ comment.content }}</td>
+
                         <td>
-                          <img class="card-img-top" src="{{ product.image }}" alt="" style="width: 50px;">
-                        </td>
-                        <td>{{ product.price }}</td>
-                        <td>{{ product.quantity }}</td>
-                        <td>
-                          <button class="btn btn-primary" (click)="removeProduct(product.id)">Xóa</button>
+                          <button class="btn btn-primary" (click)="removeComment(comment.id)">Xóa</button>
                           &nbsp;
-                          <a [routerLink]="['/admin/product/edit', product.id]"  class="btn btn-primary">Sửa</a>
-                          <!-- <a class="btn btn-primary" >Sửa</a> -->
+
                         </td>
 
                     </tr>
@@ -80,9 +72,10 @@
                 <div class="mb-4">
                   <!-- <a href="#" class="btn btn-lg btn-primary btn-style">Thêm mới</a> -->
                   <ngb-pagination
-                [(page)]="page"
-                [pageSize]="pageSize"
-                [collectionSize]="products.length"></ngb-pagination>
+                      [(page)]="page"
+                      [pageSize]="pageSize"
+                      [collectionSize]="comments.length">
+                  </ngb-pagination>
                 </div>
 
               </div>
@@ -95,3 +88,4 @@
     </section></div>
   </div>
 </section>
+

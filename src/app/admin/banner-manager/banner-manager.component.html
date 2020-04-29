@@ -40,6 +40,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Url</th>
+                    <th>Vị trí đặt banner</th>
 
                     <th scope="col">
                       <a  [routerLink]="['/admin/banner', 'add']"  class="btn btn-primary">Thêm mới</a>
@@ -56,6 +57,9 @@
 
                         <td>
                           <img class="card-img-top" src="{{ banner.url }}" alt="" style="width: 250px;">
+                        </td>
+                        <td>
+                          {{ banner.location }}
                         </td>
 
                         <td>

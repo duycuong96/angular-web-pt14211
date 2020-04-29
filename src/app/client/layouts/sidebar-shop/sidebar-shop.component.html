@@ -3,17 +3,20 @@
   <div class="search-bar w3layouts-newsletter">
       <h3 class="sear-head">Tìm kiếm...</h3>
 
-      <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"/>
+      <div class="search-product">
+        <input  type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"/>
 
         <a routerLink="/search/{{ model }}">
           <button class="btn btn-primary"><span class="fas fa-search" aria-hidden="true"></span></button>
-          </a>
+        </a>
+      </div>
 
   </div>
   <!-- preference -->
   <div class="left-side my-4">
       <h3 class="sear-head">Danh mục sản phẩm</h3>
       <ul class="w3layouts-box-list">
+        <li>  <a routerLink="/category">Tất cả sản phẩm</a></li>
         <li *ngFor="let category of categories" ><a [routerLink]="['/category', category.id]">{{ category.name }}</a></li>
       </ul>
   </div>

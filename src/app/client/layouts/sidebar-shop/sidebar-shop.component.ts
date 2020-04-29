@@ -1,10 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import { Category } from '../../../models/category';
 import { CategoryService } from '../../../services/category.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 import {Observable} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
@@ -17,9 +15,11 @@ import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
   styleUrls: ['./sidebar-shop.component.scss']
 })
 export class SidebarShopComponent implements OnInit {
+
   public model: any;
-  categories: Category[];
   productName = [];
+  categories: Category[];
+
 
   constructor(
     private route: Router,

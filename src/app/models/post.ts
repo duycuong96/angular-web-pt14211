@@ -5,4 +5,5 @@ export class Post {
   content: string;
   image: string;
   rating: number;
+  comments: [];
 }

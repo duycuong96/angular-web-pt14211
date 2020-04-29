@@ -35,7 +35,15 @@ export class BannerService {
     return this.http.put<Banner>(`${this.bannersApi}/${banner.id}`, banner)
   }
 
+  getBannersHome():Observable<Banner[]>{
+    let url = `${this.bannersApi}?location=Home`;
+    return this.http.get<Banner[]>(url);
+  }
 
+  getSlide(): Observable<Banner[]>{
+    let url = `${this.bannersApi}?location=Slide`;
+    return this.http.get<Banner[]>(url);
+  }
 
 
 }

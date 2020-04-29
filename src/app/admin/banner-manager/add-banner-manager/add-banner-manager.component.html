@@ -26,6 +26,17 @@
                   <label for="">Url</label>
                   <input type="text" class="form-control" name="url" [(ngModel)]="banner.url">
                 </div>
+
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Vị trí</label>
+                  <select class="form-control" id="exampleFormControlSelect1"  name="location" [(ngModel)]="banner.location" >
+                    <option value="Home">Trang chủ (Home)</option>
+                    <option value="Slide" >Slide trang chủ</option>
+                  </select>
+                </div>
+
+
                 <button type="submit" class="btn btn-primary" (click)="addBanner()">Submit</button>
               </form>
 

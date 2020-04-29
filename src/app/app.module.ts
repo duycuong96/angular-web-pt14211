@@ -45,6 +45,16 @@ import { CategoryManagerComponent } from './admin/category-manager/category-mana
 import { AddCategoryManagerComponent } from './admin/category-manager/add-category-manager/add-category-manager.component';
 import { EditCategoryManagerComponent } from './admin/category-manager/edit-category-manager/edit-category-manager.component';
 import { CategoryService } from './services/category.service';
+import { CommentService } from './services/comment.service';
+import { PostDetailClientComponent } from './client/post-detail-client/post-detail-client.component';
+import { CommentManagerComponent } from './admin/comment-manager/comment-manager.component';
+import { ContactComponent } from './client/contact/contact.component';
+import { AboutComponent } from './client/about/about.component';
+import { ShopSingleComponent } from './client/shop-single/shop-single.component';
+import { PostClientComponent } from './client/post-client/post-client.component';
+import { CategoryComponent } from './client/category/category.component';
+import { CategoryProductComponent } from './client/category-product/category-product.component';
+import { SearchComponent } from './client/search/search.component';
 
 
 // loader module
@@ -73,8 +83,16 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     CategoryManagerComponent,
     AddCategoryManagerComponent,
     EditCategoryManagerComponent,
+    CommentManagerComponent,
     PageNotFoundComponent,
-
+  PostDetailClientComponent,
+  ContactComponent,
+  AboutComponent,
+  ShopSingleComponent,
+  PostClientComponent,
+  CategoryComponent,
+  CategoryProductComponent,
+  SearchComponent,
 
   ],
   imports: [
@@ -102,7 +120,8 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     ProductService,
     BannerService,
     PostService,
-    CategoryService
+    CategoryService,
+    CommentService
   ],
   bootstrap: [AppComponent]
 })

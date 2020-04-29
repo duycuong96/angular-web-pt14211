@@ -33,6 +33,7 @@ export class AddProductManagerComponent implements OnInit {
     ]),
     'image': new FormControl('', [
       Validators.required,
+      Validators.pattern('https?://.+')
     ]),
     'desc': new FormControl('', [
       Validators.required,

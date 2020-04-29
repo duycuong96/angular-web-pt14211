@@ -11,8 +11,8 @@ import { BannerService } from '../../services/banner.service';
 export class HomepageComponent implements OnInit {
 
   banners: Banner[];
-  // images =  ['assets/images/anh1.jpg', 'assets/images/anh2.jpg', 'assets/images/anh3.jpg'];
-  images = [700, 533, 807].map((n) => `https://picsum.photos/id/${n}/550/570`);
+
+  slides:Banner[];
 
 
   constructor(
@@ -25,14 +25,25 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBanners();
+    this.getSlides()
   }
 
   getBanners(){
-    this.bannerService.getBanners().subscribe(
+    this.bannerService.getBannersHome().subscribe(
       data => {
         this.banners = data
       }
     )
   }
+
+  getSlides(){
+    this.bannerService.getSlide().subscribe(
+      data => {
+        this.slides = data
+      }
+    )
+  }
+
+
 
 }

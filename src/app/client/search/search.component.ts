@@ -11,8 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   products: Product[];
-  page = 1;
-  pageSize = 9;
+
 
   constructor(
     private productService: ProductService,
@@ -22,7 +21,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(param => {
       this.productService.getProducts().subscribe(data => {
-          this.products=data.filter(x => x.name ==param.search);
+          this.products=data.filter(item => item.name == param.search);
       });
     });
   }

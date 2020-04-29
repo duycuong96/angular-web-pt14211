@@ -7,7 +7,7 @@ import { Observable } from 'rxjs'
 
 export class PostService {
 
-  postsApi = 'https://my-angular9-project.herokuapp.com/posts';
+  postsApi = 'https://angular-pt14211-cuongvdph06938.herokuapp.com/posts';
 
   constructor(
     private http: HttpClient
@@ -18,7 +18,7 @@ export class PostService {
   }
 
   getPost(id): Observable<Post>{
-    return this.http.get<Post>(`${this.postsApi}/${id}`);
+    return this.http.get<Post>(`${this.postsApi}/${id}?_embed=comments`);
   }
 
   removePost(id): Observable<Post>{
