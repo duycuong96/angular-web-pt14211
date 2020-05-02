@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 import {Product} from '../../models/product';
 import {Category} from '../../models/category';
 import {ProductService} from '../../services/product.service';
@@ -15,6 +16,8 @@ export class ProductManagerComponent implements OnInit {
 
   products: Product[];
   categories: Category[];
+  name: String;
+
   page = 1;
   pageSize = 10;
   constructor(
@@ -26,6 +29,7 @@ export class ProductManagerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
+
   }
 
 
@@ -35,6 +39,16 @@ export class ProductManagerComponent implements OnInit {
         this.products = data
       }
     );
+  }
+
+  Search(){
+    if(this.name != ""){
+      this.products = this.products.filter(res => {
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      })
+    } else if(this.name == ""){
+      this.getProducts();
+    }
   }
 
   removeProduct(id){
