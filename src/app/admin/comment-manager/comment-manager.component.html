@@ -15,9 +15,9 @@
         </div>
         <div class="col-4">
           <div class="search-box">
-            <form action="#search-results.html" method="get">
-              <input class="search-input" placeholder="Tìm kiếm..." type="search" id="search">
-              <button class="search-submit" value=""><i class="fas fa-search"></i></button>
+            <form action="" method="get">
+              <input type="text" class="search-input"  id="search" name="name" placeholder="Tìm kiếm..." [(ngModel)]="name"  >
+              <button class="search-submit" (click)="Search()"><i class="fas fa-search"></i></button>
             </form>
           </div>
         </div>

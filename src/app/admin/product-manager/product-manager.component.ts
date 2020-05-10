@@ -29,7 +29,6 @@ export class ProductManagerComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
-
   }
 
 

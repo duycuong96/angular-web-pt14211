@@ -11,6 +11,7 @@ import { CommentService } from '../../services/comment.service';
 export class CommentManagerComponent implements OnInit {
 
   comments: Comment[];
+  name: String;
   page = 1;
   pageSize = 10;
 
@@ -28,6 +29,16 @@ export class CommentManagerComponent implements OnInit {
         this.comments = data
       }
     )
+  }
+
+  Search(){
+    if(this.name != ""){
+      this.comments = this.comments.filter(res => {
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      })
+    } else if(this.name == ""){
+      this.getComments();
+    }
   }
 
   removeComment(id){

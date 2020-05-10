@@ -10,6 +10,7 @@ import { CategoryService } from '../../services/category.service'
 export class CategoryManagerComponent implements OnInit {
 
   categories: Category[];
+  name: String;
   page = 1;
   pageSize = 10;
 
@@ -30,6 +31,16 @@ export class CategoryManagerComponent implements OnInit {
         this.categories = data
       }
     )
+  }
+
+  Search(){
+    if(this.name != ""){
+      this.categories = this.categories.filter(res => {
+        return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+      })
+    } else if(this.name == ""){
+      this.getCategories();
+    }
   }
 
   removeCategory(id){

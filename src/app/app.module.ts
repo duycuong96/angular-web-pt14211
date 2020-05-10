@@ -9,7 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
+import { CategoryService } from './services/category.service';
+import { CommentService } from './services/comment.service';
 import {ProductService} from './services/product.service';
+import { BannerService } from './services/banner.service';
+import { PostService } from './services/post.service';
 
 import { AdminComponent } from './admin/admin/admin.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
@@ -33,19 +37,18 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { HttpClient } from  '@angular/common/http';
 import { LayoutAdminModule } from './admin/layouts/layouts.module';
-import { BannerService } from './services/banner.service';
+
 import { AddBannerManagerComponent } from './admin/banner-manager/add-banner-manager/add-banner-manager.component';
 import { BannerManagerComponent } from './admin/banner-manager/banner-manager.component';
 import { EditBannerManagerComponent } from './admin/banner-manager/edit-banner-manager/edit-banner-manager.component';
-import { PostService } from './services/post.service';
+
 import { PostManagerComponent } from './admin/post-manager/post-manager.component';
 import { AddPostManagerComponent } from './admin/post-manager/add-post-manager/add-post-manager.component';
 import { EditPostManagerComponent } from './admin/post-manager/edit-post-manager/edit-post-manager.component';
 import { CategoryManagerComponent } from './admin/category-manager/category-manager.component';
 import { AddCategoryManagerComponent } from './admin/category-manager/add-category-manager/add-category-manager.component';
 import { EditCategoryManagerComponent } from './admin/category-manager/edit-category-manager/edit-category-manager.component';
-import { CategoryService } from './services/category.service';
-import { CommentService } from './services/comment.service';
+
 import { PostDetailClientComponent } from './client/post-detail-client/post-detail-client.component';
 import { CommentManagerComponent } from './admin/comment-manager/comment-manager.component';
 import { ContactComponent } from './client/contact/contact.component';
@@ -85,14 +88,14 @@ export  function  HttpLoaderFactory(http:  HttpClient) {
     EditCategoryManagerComponent,
     CommentManagerComponent,
     PageNotFoundComponent,
-  PostDetailClientComponent,
-  ContactComponent,
-  AboutComponent,
-  ShopSingleComponent,
-  PostClientComponent,
-  CategoryComponent,
-  CategoryProductComponent,
-  SearchComponent,
+    PostDetailClientComponent,
+    ContactComponent,
+    AboutComponent,
+    ShopSingleComponent,
+    PostClientComponent,
+    CategoryComponent,
+    CategoryProductComponent,
+    SearchComponent,
 
   ],
   imports: [
